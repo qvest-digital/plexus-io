@@ -27,6 +27,7 @@ import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -154,12 +155,17 @@ public class PlexusIoFileResourceCollection
         final File dir = getBaseDir();
         final HashMap<Integer, String> cache1 = new HashMap<>();
         final HashMap<Integer, String> cache2 = new HashMap<>();
+        System.err.println("following symlinks: " + isFollowingSymLinks());
         for ( String name : resources )
         {
             String sourceDir = name.replace( '\\', '/' );
             File f = new File( dir, sourceDir );
+            Path p = f.toPath();
+            if (isFollowingSymLinks()) {
+                p = p.toRealPath();
+            }
 
-            PlexusIoResourceAttributes attrs = new FileAttributes( f, cache1, cache2 );
+            PlexusIoResourceAttributes attrs = new FileAttributes( p, cache1, cache2 );
             attrs = mergeAttributes( attrs, f.isDirectory() );
 
             String remappedName = getName( name );

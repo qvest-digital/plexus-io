@@ -60,8 +60,13 @@ public class FileAttributes
                            @Nonnull Map<Integer, String> groupCache )
         throws IOException
     {
+        this( file.toPath(), userCache, groupCache );
+    }
 
-        Path path = file.toPath();
+    public FileAttributes( @Nonnull Path path, @Nonnull Map<Integer, String> userCache,
+                           @Nonnull Map<Integer, String> groupCache )
+        throws IOException
+    {
         if ( AttributeUtils.isUnix( path ) )
         {
             Map<String, Object> attrs = Files.readAttributes( path, "unix:permissions,gid,uid,isSymbolicLink,mode", LinkOption.NOFOLLOW_LINKS );
@@ -98,7 +103,7 @@ public class FileAttributes
         }
         else
         {
-            FileOwnerAttributeView fa = AttributeUtils.getFileOwnershipInfo( file );
+            FileOwnerAttributeView fa = AttributeUtils.getFileOwnershipInfo( path );
             this.userName = fa.getOwner().getName();
             userId = null;
             this.groupName = null;

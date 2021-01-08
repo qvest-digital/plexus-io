@@ -149,9 +149,16 @@ public class AttributeUtils
     public static FileOwnerAttributeView getFileOwnershipInfo( @Nonnull File file )
         throws IOException
     {
+        return getFileOwnershipInfo( file.toPath() );
+    }
+
+    @Nullable
+    public static FileOwnerAttributeView getFileOwnershipInfo( @Nonnull Path path )
+        throws IOException
+    {
         try
         {
-            return Files.getFileAttributeView( file.toPath(), FileOwnerAttributeView.class, LinkOption.NOFOLLOW_LINKS );
+            return Files.getFileAttributeView( path, FileOwnerAttributeView.class, LinkOption.NOFOLLOW_LINKS );
         }
         catch ( UnsupportedOperationException e )
         {
