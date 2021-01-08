@@ -28,11 +28,19 @@
       <id>github:gh-pages</id>
       <url>${project.scm.developerConnection}</url>
     </site>
+	<repository>
+		<id>ossrh</id>
+		<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	</repository>
   </distributionManagement>
 
   <properties>
     <cobertura.skip>true</cobertura.skip>
     <javaVersion>7</javaVersion>
+	<javaRelease>7</javaRelease>
+	<maven.gpg.version>1.6</maven.gpg.version>
+	<maven.javadoc.version>3.2.0</maven.javadoc.version>
+	<maven.source.version>3.2.1</maven.source.version>
   </properties>
 
   <dependencies>
@@ -69,6 +77,33 @@
 
   <build>
     <plugins>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+		<configuration>
+			<source>${javaRelease}</source>
+			<javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+		</configuration>
+	</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-gpg-plugin</artifactId>
+			<version>${maven.gpg.version}</version>
+			<executions>
+				<execution>
+					<id>sign-artifacts</id>
+					<phase>verify</phase>
+					<goals>
+						<goal>sign</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-source-plugin</artifactId>
+		<version>${maven.source.version}</version>
+	</plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
