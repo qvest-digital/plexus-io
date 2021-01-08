@@ -7,16 +7,17 @@
     <version>5.1</version>
   </parent>
 
+  <groupId>org.evolvis.tartools.forked</groupId>
   <artifactId>plexus-io</artifactId>
   <version>3.2.0</version>
 
   <name>Plexus IO Components</name>
 
   <scm>
-    <connection>scm:git:git@github.com:codehaus-plexus/plexus-io.git</connection>
-    <developerConnection>scm:git:git@github.com:codehaus-plexus/plexus-io.git</developerConnection>
-    <url>http://github.com/codehaus-plexus/plexus-io</url>
-    <tag>plexus-io-3.2.0</tag>
+    <connection>scm:git:git@github.com:tarent/plexus-io.git</connection>
+    <developerConnection>scm:git:git@github.com:tarent/plexus-io.git</developerConnection>
+    <url>http://github.com/tarent/plexus-io</url>
+    <tag>plexus-io-3.2.0-follow-symlinks</tag>
   </scm>
   <issueManagement>
     <system>jira</system>

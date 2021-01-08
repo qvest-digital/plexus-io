@@ -52,7 +52,8 @@ public class ResourceFactory
                                                    PlexusIoResourceAttributes attributes )
         throws IOException
     {
-        boolean symbolicLink = attributes.isSymbolicLink();
+        boolean symbolicLink = false;//attributes.isSymbolicLink();
+	    System.err.println("moo");
         return symbolicLink ? new PlexusIoSymlinkResource( f, name, attributes )
             :  new PlexusIoFileResource(f, name, attributes, contentSupplier, inputStreamTransformer);
     }
