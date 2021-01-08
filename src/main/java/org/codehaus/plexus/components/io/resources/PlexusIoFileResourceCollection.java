@@ -155,7 +155,6 @@ public class PlexusIoFileResourceCollection
         final File dir = getBaseDir();
         final HashMap<Integer, String> cache1 = new HashMap<>();
         final HashMap<Integer, String> cache2 = new HashMap<>();
-        System.err.println("following symlinks: " + isFollowingSymLinks());
         for ( String name : resources )
         {
             String sourceDir = name.replace( '\\', '/' );
