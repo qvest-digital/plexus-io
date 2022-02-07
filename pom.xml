@@ -8,8 +8,8 @@
   </parent>
 
   <groupId>org.evolvis.tartools.forked</groupId>
-  <artifactId>plexus-io</artifactId>
-  <version>3.2.0</version>
+  <artifactId>plexus-io-3.2.0</artifactId>
+  <version>2</version>
 
   <name>Plexus IO Components</name>
 
@@ -17,7 +17,7 @@
     <connection>scm:git:git@github.com:tarent/plexus-io.git</connection>
     <developerConnection>scm:git:git@github.com:tarent/plexus-io.git</developerConnection>
     <url>http://github.com/tarent/plexus-io</url>
-    <tag>plexus-io-3.2.0-follow-symlinks</tag>
+    <tag>plexus-io-3.2.0-follow-symlinks-r2</tag>
   </scm>
   <issueManagement>
     <system>jira</system>
