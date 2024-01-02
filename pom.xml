@@ -14,9 +14,9 @@
   <name>Plexus IO Components</name>
 
   <scm>
-    <connection>scm:git:git@github.com:tarent/plexus-io.git</connection>
-    <developerConnection>scm:git:git@github.com:tarent/plexus-io.git</developerConnection>
-    <url>http://github.com/tarent/plexus-io</url>
+    <connection>scm:git:git@github.com:qvest-digital/plexus-io.git</connection>
+    <developerConnection>scm:git:git@github.com:qvest-digital/plexus-io.git</developerConnection>
+    <url>https://github.com/qvest-digital/plexus-io</url>
     <tag>plexus-io-3.2.0-follow-symlinks-r2</tag>
   </scm>
   <issueManagement>
